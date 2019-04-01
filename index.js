@@ -2,6 +2,11 @@ function button () {
     alert('Hey I am button and I just got clicked')
 }
 
+function play () {
+    let audio = new Audio ('./sounds/tom-1.mp3')
+    audio.play()
+}
+
 // document.querySelectorAll('button')[0].addEventListener('click', buttonW)
 
 //same as above but anonymous function
@@ -13,7 +18,7 @@ function button () {
 let buttons = document.querySelectorAll('button')
 
 for (let i = 0; i < buttons.length; i++ ) {
-    document.querySelectorAll('button')[i].addEventListener('click', button)
+    document.querySelectorAll('button')[i].addEventListener('click', play)
 }
 
 
