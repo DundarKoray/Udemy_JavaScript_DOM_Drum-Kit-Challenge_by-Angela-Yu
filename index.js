@@ -14,52 +14,87 @@ function play () {
 //     alert('button a ')
 // })
 
-
+// selecting all buttons
 let buttons = document.querySelectorAll('button')
 
+// giving event listener for all buttons by looping
 for (let i = 0; i < buttons.length; i++ ) {
     document.querySelectorAll('button')[i].addEventListener('click', function (){
         
         let buttonInnerHTML = this.innerHTML
-        console.log(buttonInnerHTML)
-        switch (buttonInnerHTML) {
-            case 'w':
-                let audioButtonW = new Audio('./sounds/tom-1.mp3')
-                audioButtonW.play()
-            break;
+        makeSound(buttonInnerHTML)
+        
 
-            case 'a':
-                let audioButtonA = new Audio('./sounds/tom-2.mp3')
-                audioButtonA.play()
-            break;
-
-            case 's':
-                let audioButtonS = new Audio('./sounds/tom-3.mp3')
-                audioButtonS.play()
-            break;
-
-            case 'd':
-                let audioButtonD = new Audio('./sounds/tom-4.mp3')
-                audioButtonD.play()
-            break;
-            
-            case 'j':
-                let audioButtonJ = new Audio('./sounds/snare.mp3')
-                audioButtonJ.play()
-            break;
-
-            case 'k':
-                let audioButtonK = new Audio('./sounds/kick-bass.mp3')
-                audioButtonK.play()
-            break;
-            
-            case 'l':
-                let audioButtonL = new Audio('./sounds/crash.mp3')
-                audioButtonL.play()
-            break;
-        }
     })
 }
+
+/* this basically shows what keyboard button we press down
+    document.addEventListener('keydown', function(event){
+    console.log(event)
+    })
+*/
+
+document.addEventListener('keydown', function(event){
+    makeSound(event.key)
+
+})
+
+
+
+function makeSound (key) {
+    switch (key) {
+        case 'w':
+            let audioButtonW = new Audio('./sounds/tom-1.mp3')
+            audioButtonW.play()
+        break;
+
+        case 'a':
+            let audioButtonA = new Audio('./sounds/tom-2.mp3')
+            audioButtonA.play()
+        break;
+
+        case 's':
+            let audioButtonS = new Audio('./sounds/tom-3.mp3')
+            audioButtonS.play()
+        break;
+
+        case 'd':
+            let audioButtonD = new Audio('./sounds/tom-4.mp3')
+            audioButtonD.play()
+        break;
+        
+        case 'j':
+            let audioButtonJ = new Audio('./sounds/snare.mp3')
+            audioButtonJ.play()
+        break;
+
+        case 'k':
+            let audioButtonK = new Audio('./sounds/kick-bass.mp3')
+            audioButtonK.play()
+        break;
+        
+        case 'l':
+            let audioButtonL = new Audio('./sounds/crash.mp3')
+            audioButtonL.play()
+        break;
+
+        default: console.log(key)
+                
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // //High order functions - Mini calculator challenge
